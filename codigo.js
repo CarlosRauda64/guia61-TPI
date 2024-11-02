@@ -27,13 +27,11 @@ getArticulos = async () => {
             if (isNaN(articulo.image) && isNaN(articulo.title) && isNaN(articulo.category) && isNaN(articulo.description)) {
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
-            <tr>
                 <td class="container-img"><img src="${articulo.image}" alt="${articulo.title}-img"></td>
                 <td>${articulo.title}</td>
                 <td>$${articulo.price}</td>
                 <td>${articulo.category}</td>
                 <td>${articulo.description}</td>
-            <tr>
             `;
                 tbody.appendChild(tr);
             }
@@ -70,13 +68,11 @@ filtrarArticulos = async () => {
             if (isNaN(articulo.image) && isNaN(articulo.title) && isNaN(articulo.category) && isNaN(articulo.description)) {
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
-            <tr>
                 <td class="container-img"><img src="${articulo.image}" alt="${articulo.title}-img"></td>
                 <td>${articulo.title}</td>
                 <td>$${articulo.price}</td>
                 <td>${articulo.category}</td>
                 <td>${articulo.description}</td>
-            <tr>
             `;
                 tbody.appendChild(tr);
             }

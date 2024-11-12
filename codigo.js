@@ -34,18 +34,16 @@ getArticulos = async () => {
         const data = await response.json();
         tbody.innerHTML = '';
         data.forEach((articulo) => {
-            // Verifica que los campos no sean números
+            // Verifica que los campos no esten vacíos
             if (articulo.image != "" && articulo.title != "" && articulo.category != "" && articulo.description != "" && articulo.price != "") {
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
-            <tr>
                 <td class="container-img"><img src="${articulo.image}" alt="${articulo.title}-img"></td>
                 <td>${articulo.title}</td>
                 <td>$${articulo.price}</td>
                 <td>${articulo.category}</td>
                 <td>${articulo.description}</td>
-                <td class="container-img"><button id="btn-eliminar" onclick="obtenerId(this)" data-info="${articulo.id}"><img src="trash-icon.svg" alt="btn-eliminar"></button></td> 
-            <tr>
+                <td class="container-img"><button id="btn-eliminar" onclick="obtenerId(this)" data-info="${articulo.id}"><img src="trash-icon.svg" alt="btn-eliminar"></button></td>
             `;
                 tbody.appendChild(tr);
             }
@@ -164,14 +162,12 @@ filtrarArticulos = async () => {
             if (isNaN(articulo.image) && isNaN(articulo.title) && isNaN(articulo.category) && isNaN(articulo.description)) {
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
-            <tr>
                 <td class="container-img"><img src="${articulo.image}" alt="${articulo.title}-img"></td>
                 <td>${articulo.title}</td>
                 <td>$${articulo.price}</td>
                 <td>${articulo.category}</td>
                 <td>${articulo.description}</td>
                 <td class="container-img"><button id="btn-eliminar" onclick="obtenerId(this)" data-info="${articulo.id}"><img src="trash-icon.svg" alt="btn-eliminar"></button></td> 
-            <tr>
             `;
                 tbody.appendChild(tr);
             }

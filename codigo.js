@@ -35,7 +35,7 @@ getArticulos = async () => {
         tbody.innerHTML = '';
         data.forEach((articulo) => {
             // Verifica que los campos no sean números
-            if (isNaN(articulo.image) && isNaN(articulo.title) && isNaN(articulo.category) && isNaN(articulo.description)) {
+            if (articulo.image != "" && articulo.title != "" && articulo.category != "" && articulo.description != "" && articulo.price != "") {
                 const tr = document.createElement('tr');
                 tr.innerHTML = `
             <tr>

@@ -11,7 +11,7 @@ Asignatura: TPI 115 -->
     <title>WEB API</title>
 </head>
 <body>
-    <!-- Datos personales -->
+    <!-- Barra de navegación -->
     <nav class="navbar">
         <div class="personal-data">
             <p>Datos Personales:</p>
@@ -26,11 +26,11 @@ Asignatura: TPI 115 -->
             </div>
         </div>
     </nav>
-	<!-- Datos personales -->
-	<div class="obtenerArt">
+    <div class="obtenerArt">
         <button id="obtenerArt-btn" onclick="mostrarArticulos()">Obtener Articulos</button>
     </div>
     <main id="main">
+        <!-- Contenedor para el botón de agregar producto -->
         <div class="container-opt">
             <div class="filtro-category">
                 <label for="filtro">Buscar por:</label>
@@ -48,6 +48,7 @@ Asignatura: TPI 115 -->
                 </select>
                 <button id="limpiar-filtros">Limpiar Filtros</button>
             </div>
+            <button id="add-btn">Agregar producto</button>
         </div>
         <!-- Contenedor para la tabla de productos -->
         <div class="container-table">
@@ -58,21 +59,59 @@ Asignatura: TPI 115 -->
                     <th>Precio</th>
                     <th>Categoría</th>
                     <th>Descripción</th>
+                    <th>Eliminar</th>
                 </tr>
                 <tbody id="tbody">
-                    <!-- Las filas de productos se agregarán aquí a travez del JavaScript -->
+                    <!-- Las filas de productos se agregarán aquí dinámicamente -->
                 </tbody>
             </table>
         </div>
     </main>
+    <!-- Sección para agregar un nuevo producto -->
+    <section id="add-container">
+        <form id="add-product-form">
+            <div class="option">
+                <label for="product-image">Imagen (url):</label>
+                <input type="text" id="product-image" name="product-image">
+            </div>
+            <div class="option">
+                <label for="product-price">Precio:</label>
+                <input type="number" id="product-price" name="product-price">
+            </div>
+            <div class="option">
+                <label for="product-title">Título:</label>
+                <input type="text" id="product-title" name="product-title">    
+            </div>
+            <div class="option">
+                <label for="product-category">Categoría:</label>
+                <select id="product-category" name="product-category">
+                    <option value="" disabled selected>Seleccione una opción</option>
+                    <option value="electronicos">electronicos</option>
+                    <option value="joyeria">joyeria</option>
+                    <option value="caballeros">Ropa hombre</option>
+                    <option value="damas">Ropa mujer</option>
+                </select>
+            </div>
+            <div class="option">
+                <label for="product-description">Descripción:</label>
+                <textarea name="product-description" id="product-description"></textarea>
+            </div>                        
+            <!-- Botones para agregar o cancelar la adición del producto -->
+            <div class="forms-btn">
+                <button type="button" id="add-btn-forms">Agregar</button>
+                <button type="button" id="can-btn-forms">Cancelar</button>
+            </div>
+        </form>
+    </section>
+    <script src="codigo.js"></script>
     <!-- Pie de página -->
     <footer class="footer">
         <div class="footer-icon">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Escudo_de_la_Universidad_de_El_Salvador.svg/270px-Escudo_de_la_Universidad_de_El_Salvador.svg.png" alt="img-api">
         </div>
         <div class="info-footer">
-            <p>DISEÑO DE SITIOS WEB DINÁMICOS EN SERVIDOR</p>
-            <p>"Programación Front-End Usando WebAPIs"</p>
+            <p>DISEÑO DE SITIOS WEB DINÁMICOS EN SERVIDOR            </p>
+            <p>"Programación Front-End Usando WebAPIs"            </p>
             <p>Creación de API-REST de pruebas</p>
             <p>TPI-115</p>
         </div>
@@ -80,6 +119,5 @@ Asignatura: TPI 115 -->
             <h3>Universidad de <br> El Salvador</h3>
         </div>   
     </footer>
-	<script src="codigo.js"></script>
 </body>
 </html>

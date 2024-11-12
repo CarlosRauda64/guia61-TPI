@@ -9,11 +9,22 @@ const addContainer = document.querySelector('#add-container'); // contenedor de 
 const btnCancelar = document.querySelector('#can-btn-forms'); // botón de cancelar
 const btnAgregar = document.querySelector('#add-btn-forms'); // botón de agregar
 const limpiarFiltrosBtn = document.querySelector('#limpiar-filtros'); // botón de limpiar filtros
+const spinner = document.querySelector('#spinner-container');
+const obtenerArt = document.querySelector('#obtenerArt');
 
-function mostrarArticulos() {
+async function mostrarArticulos() {
+    spinner.classList.toggle('active');
+    obtenerArt.classList.toggle('active');
+    await esperar(2000);
+    spinner.classList.toggle('active');
     const main = document.querySelector('#main');
     main.classList.toggle('active');
 }
+
+function esperar(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+  
 
 // Función para obtener artículos
 getArticulos = async () => {

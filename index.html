@@ -72,6 +72,12 @@ Asignatura: TPI 115 -->
     </main>
     <!-- Sección para agregar un nuevo producto -->
     <section id="add-container">
+        <div id="alerta-container">
+            <div class="alerta-options">
+                <p id="alerta">¡Por favor llene todos los campos!</p>
+                <button id="alerta-btn" onclick="quitarAlerta()">OK</button>
+            </div>
+        </div>
         <form id="add-product-form">
             <div class="option">
                 <label for="product-image">Imagen (url):</label>

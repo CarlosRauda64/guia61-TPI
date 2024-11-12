@@ -11,6 +11,7 @@ const btnAgregar = document.querySelector('#add-btn-forms'); // botón de agrega
 const limpiarFiltrosBtn = document.querySelector('#limpiar-filtros'); // botón de limpiar filtros
 const spinner = document.querySelector('#spinner-container');
 const obtenerArt = document.querySelector('#obtenerArt');
+const alertaCont = document.querySelector('#alerta-container');
 
 async function mostrarArticulos() {
     spinner.classList.toggle('active');
@@ -77,7 +78,7 @@ btnAgregar.addEventListener('click', () => {
         addContainer.classList.toggle('active');
     }
     else {
-        alert('Por favor, ingrese los datos correctamente')
+        alertaCont.classList.toggle('active');
     }
 });
 
@@ -192,3 +193,7 @@ limpiarFiltrosBtn.addEventListener('click', () => {
     document.querySelector('#filtro-category').querySelector('option').selected = true;
     document.querySelector('#filtro-price').querySelector('option').selected = true;
 });
+
+function quitarAlerta() {
+    alertaCont.classList.toggle('active');
+}
